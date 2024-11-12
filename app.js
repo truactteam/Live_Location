@@ -7,6 +7,8 @@ const http = require('http');
 const socketio = require('socket.io');
 const server = http.createServer(app);
 const io = socketio(server);
+let linkSer = "";
+var PORT = linkSer ? linkSer : 3000;
 
 io.on("connection", (socket)=>{
     console.log("Socket Connected", socket.id);
@@ -27,4 +29,4 @@ app.get('/',(req, res)=>{
 })
 
 
-server.listen(3000);
+server.listen(PORT);
