@@ -7,8 +7,8 @@ const http = require('http');
 const socketio = require('socket.io');
 const server = http.createServer(app);
 const io = socketio(server);
-let linkSer = "https://live-location-j139.onrender.com";
-var PORT = linkSer ? linkSer : 3000;
+// let linkSer = "https://live-location-j139.onrender.com";
+var PORT = process.env.PORT || 3000;
 
 io.on("connection", (socket)=>{
     console.log("Socket Connected", socket.id);
